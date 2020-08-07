@@ -1,8 +1,8 @@
 import { createElement } from "../utils/elements.js";
 
-export function createTitle(){
-    const title = createElement("h1", {
-        innerHTML: "Hallo World!"
+export function createTitle(title){
+    const text = createElement("h1", {
+        innerHTML: title
     });
-    return title
+    return text;
 };

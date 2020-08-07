@@ -3,11 +3,12 @@ import { getAnswer, resetURL } from "./numberButton";
 
 export function createButton() {
   const button = createElement("button", { innerHTML: "API" });
-  button.addEventListener("click", async () => {
+  /*button.addEventListener("click", async () => {
     const api = await getAnswer();
-    console.log(api);
     resetURL();
-  });
+    return api;
+    
+  });*/
 
   return button;
 }
