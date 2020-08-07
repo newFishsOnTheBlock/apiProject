@@ -10,7 +10,6 @@ button.addEventListener("click", async () =>{
   const api = await getAnswer();
   answer = await createTitle(api);
   document.body.append(answer);
-  console.log(answer);
   resetURL();
   
 })
