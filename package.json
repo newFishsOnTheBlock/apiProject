@@ -1,23 +1,30 @@
 {
-  "name": "APIProject",
+  "name": "apiProject",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev:build": "webpack --watch",
+    "dev:server": "live-server dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/newFishsOnTheBlock/APIProject.git"
+    "url": "git+https://github.com/newFishsOnTheBlock/apiProject.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/newFishsOnTheBlock/APIProject/issues"
+    "url": "https://github.com/newFishsOnTheBlock/apiProject/issues"
   },
-  "homepage": "https://github.com/newFishsOnTheBlock/APIProject#readme",
+  "homepage": "https://github.com/newFishsOnTheBlock/apiProject#readme",
   "devDependencies": {
+    "css-loader": "^4.2.1",
+    "file-loader": "^6.0.0",
+    "live-server": "^1.2.1",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
