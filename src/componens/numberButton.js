@@ -1,9 +1,11 @@
 import { createElement } from "../utils/elements";
 import "../componens/numberButton.css"
+import { numbersApi } from "../api/numbersApi";
 let url = "http://numbersapi.com/";
 function updateURL(newValue) {
     url += newValue;
 }
+let numberDefined = false;
 
 export function createNumberButton(number) {
     const numberButton = createElement("button", {
@@ -12,11 +14,23 @@ export function createNumberButton(number) {
     });
     numberButton.addEventListener("click", () => {
         updateURL(numberButton.innerHTML);
-        console.log(getcurrentURL());
+        numberDefined = true;
+        console.log(url);
   });
   return numberButton;
 }
 
-export function getcurrentURL(){
-    return url;
+
+export function resetURL(){
+    url = "http://numbersapi.com/";
+    numberDefined = false;
+}
+export async function getAnswer(){
+    if(numberDefined){
+    const answer = await numbersApi(url);
+    return answer;
+}
+else {
+    console.log("ERROR!");
+}
 }

@@ -1,5 +1,6 @@
-export async function numbersApi() {
-  const response = await fetch("http://numbersapi.com/31");
+
+export async function numbersApi(url) {
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error(response.status);
   }

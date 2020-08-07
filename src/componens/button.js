@@ -1,11 +1,12 @@
 import { createElement } from "../utils/elements";
-import { numbersApi } from "../api/numbersApi";
+import { getAnswer, resetURL } from "./numberButton";
 
 export function createButton() {
   const button = createElement("button", { innerHTML: "API" });
   button.addEventListener("click", async () => {
-    const api = await numbersApi();
+    const api = await getAnswer();
     console.log(api);
+    resetURL();
   });
 
   return button;
