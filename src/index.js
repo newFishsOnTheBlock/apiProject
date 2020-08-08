@@ -2,6 +2,7 @@ import {createTitle} from "../src/componens/title.js"
 import { createNumberButton, getAnswer, resetURL } from "./componens/numberButton";
 import "../src/global.css";
 import { createButton } from "./componens/button";
+import { createNumbersButtons } from "./newFunction/newNumberButton.js";
 
 let answer = "Choose a number!"
 
@@ -18,4 +19,10 @@ for (let i=0; i<10; i++){
   const numberButton = createNumberButton(i);
   document.body.append(numberButton);
 }
+
 document.body.append(button);
+
+const btnNUmbers = createNumbersButtons();
+
+
+document.body.append(btnNUmbers)
