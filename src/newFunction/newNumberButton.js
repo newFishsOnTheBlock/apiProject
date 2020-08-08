@@ -1,6 +1,6 @@
 import { createElement } from "../utils/elements"
 
-export async function createNumbersButtons() {
+export function createNumbersButtons() {
     let url2 = "http://numbersapi.com/";
     function updatesURL(newValue) {
     url2 += newValue;
@@ -9,11 +9,11 @@ export async function createNumbersButtons() {
     let numberDefined = false;
 
     for (let number=0; number<10; number++) {
-        const numbersButton = await createElement("button", {
+        const numbersButton = createElement("button", {
             className: "btn_numbers",
             innerHTML: number,
         });
-        await numbersButton.addEventListener("click", () => {
+        numbersButton.addEventListener("click", () => {
             updatesURL(numbersButton.innerHTML);
             numberDefined = true;
             console.log(url2);
@@ -22,3 +22,20 @@ export async function createNumbersButtons() {
     }
     return numberButton
 };
+
+export function resetUrl() {
+    url = "http://numbersapi.com/";
+    numberDefined = false;
+  }
+  export async function getAnswer2() {
+    let answer = "Please enter a number";
+    if (numberDefined) {
+      answer = await numbersApi(url);
+  
+      return answer;
+    }
+    else{
+        return answer;
+    }
+  }
+  
