@@ -9,7 +9,7 @@ let numberDefined = false;
 
 export function createNumberButton(number) {
   const numberButton = createElement("button", {
-    className: "numberButton",
+    className: "btn-" + number,
     innerHTML: number,
   });
   numberButton.addEventListener("click", () => {
