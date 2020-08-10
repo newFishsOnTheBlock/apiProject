@@ -1,5 +1,5 @@
 import { createElement } from "../utils/elements";
-import "../componens/numberButton.css";
+import "../../src/global.css";
 import { numbersApi } from "../api/numbersApi";
 let url = "http://numbersapi.com/";
 function updateURL(newValue) {
@@ -9,7 +9,7 @@ let numberDefined = false;
 
 export function createNumberButton(number) {
   const numberButton = createElement("button", {
-    className: "numberButton",
+    className: "btn-" + number,
     innerHTML: number,
   });
   numberButton.addEventListener("click", () => {
